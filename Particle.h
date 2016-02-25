@@ -19,6 +19,7 @@ public:
 	Particle();
 	virtual ~Particle();
 	void update(int millis);
+	void init();
 };
 
 } /* namespace jab */

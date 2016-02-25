@@ -171,14 +171,14 @@ void Screen::blur() {
 int Screen::update() {
 	unsigned char red = (1 + sin(SDL_GetTicks() * 0.0005)) * 128;
 	unsigned char green = (1 + sin(SDL_GetTicks() * 0.0007)) * 128;
-	unsigned char blue = (1 + cos(SDL_GetTicks() * 0.0007)) * 128;
+	unsigned char blue = (1 + sin(SDL_GetTicks() * 0.0003)) * 128;
 	collection.update(SDL_GetTicks());
 //	clearBuffer();
 	const Particle * const pCollection = collection.getParticles();
 	for(int i = 0; i < collection.NPARTICLES; i++) {
 		Particle particle = pCollection[i];
-		int x = (particle.x + 1) * 400;
-		int y = (particle.y * 400) + HEIGHT / 2;
+		int x = (particle.x + 1) * (WIDTH / 2);
+		int y = (particle.y * (WIDTH / 2)) + HEIGHT / 2;
 		setPixelColor(x, y, red, green, blue);
 	}
 	blur();

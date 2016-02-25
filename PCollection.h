@@ -16,7 +16,7 @@ private:
 	Particle *pCollection;
 	int lastMillis;
 public:
-	const static int NPARTICLES = 15000;
+	const static int NPARTICLES = 5000;
 	PCollection();
 	const Particle *getParticles() { return pCollection; };
 	void update(int millis);
